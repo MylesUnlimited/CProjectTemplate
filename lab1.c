@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 
-char * readString(char * file){
+char * readString(char * fileName){
 
     char * dest;
 
     dest = (char *) malloc(100);
     
     FILE *fileptr;                          
-    fileptr = fopen(file, "r");   
+    fileptr = fopen(fileName, "r");   
 
     fgets(dest, 100, fileptr);
 
@@ -20,17 +20,17 @@ char * readString(char * file){
     }
     
     
-char* mysteryExplode(char * stuff){
+char* mysteryExplode(const char * str){
 
     char* new;
 
-    int length = strlen(stuff) + 1;
+    int length = strlen(str) + 1;
 
     new = (char *) malloc(((length)*(length+1))/2);
 
     for (int p = 0; p < length; p++){
         
-        strncat(new, stuff, p);
+        strncat(new, str, p);
     }
 
     return (new);
