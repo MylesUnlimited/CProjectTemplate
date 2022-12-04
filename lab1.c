@@ -17,7 +17,7 @@ char * readString(char * fileName){
 
     fclose( fileptr );
 
-    dest[strcspn(dest, "\n")] = 0;
+    dest[strcspn(dest, "\n")] = '\0';
 
     return dest;
     }
